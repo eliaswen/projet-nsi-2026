@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MariolaStevanovic-Javascript-Exercice1</title>
+  <link rel="stylesheet" href="../../assets/css/exercices.css">
+
+</head>
+
+<body>
+ <div class="exercice-wrapper">
+  <h1>Ex 1: comparer deux nombree</h1>
+  <div class="boite">
+    <p>Entrer deux nombres puis afficher le plus grand ou dire s'ils sont egaux</p>
+    <p>
+     <label>Nombre A:</label>
+     <input type="number" id="a" value="5">
+    </p>
+    <p>
+     <label>Nombre B:</label>
+     <input type="number" id="b" value="12">
+    </p>
+    <button onclick="compar()">Comparer</button>
+
+
+
+
+
+    <div class="rst" id="res">Resultat:</div>
+
+  </div>
+  <a href="exercices.html" class="home-btn">Retour a la page des exercices</a>
+ </div>
+
+  <script>
+    function wib(numberA, numberB){
+      if (numberA > numberB){
+        return numberA;
+    } else if (numberB> numberA){
+        return numberB;
+      } else {
+        return "egaux";
+      }
+    }
+
+    function compar(){
+      let a =Number(document.getElementById("a").value);
+      let b=Number(document.getElementById("b").value);
+      let rep= wib(a, b);
+      if (rep === "egaux"){
+        document.getElementById("res").textContent= "Resultat: les deux nombres sont egaux";
+    } else {
+        document.getElementById("res").textContent= "Resultat: le plus grand est "+rep;
+      }
+    }
+  </script>
+</body>
+</html>

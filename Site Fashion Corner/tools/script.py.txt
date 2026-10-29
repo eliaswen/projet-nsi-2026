@@ -1,0 +1,51 @@
+import os
+import re
+from pathlib import Path
+
+def update_login_tags(directory=None):
+    directory = Path(directory) if directory is not None else Path(__file__).resolve().parents[1]
+    # Regex pour capturer la balise <a> (gère les sauts de ligne possibles avant </a>)
+    pattern_a = re.compile(r'<a[^>]*class="login"[^>]*>\s*Se connecter\s*</a>', re.IGNORECASE)
+    
+    # La chaîne de remplacement avec le HTML corrigé (</button>) et les scripts
+    replacement = (
+        '<button onclick="loginButtonClicked()" class="login" id="login-text">Se connecter</button>\n'
+        '        <script src="../assets/js/default-script.js"></script>\n'
+        '        <script type="text/javascript">onEveryPageLoad()</script>'
+    )
+
+    # Optionnel: Regex pour corriger les fichiers qui auraient déjà le bouton mais fermé avec </a>
+    pattern_wrong_button = re.compile(r'<button([^>]*onclick="loginButtonClicked\(\)"[^>]*)>\s*Se connecter\s*</a>', re.IGNORECASE)
+    replacement_button = r'<button\1>Se connecter</button>'
+
+    files_updated = 0
+
+    for filepath in directory.rglob("*.html"):
+        if filepath.is_file():
+            filename = str(filepath.relative_to(directory))
+            script_path = os.path.relpath(directory / "assets/js/default-script.js", filepath.parent).replace(os.sep, "/")
+            page_replacement = replacement.replace("../assets/js/default-script.js", script_path)
+            
+            with open(filepath, 'r', encoding='utf-8') as file:
+                content = file.read()
+            
+            original_content = content
+            
+            # Remplacement des balises <a>
+            content = pattern_a.sub(page_replacement, content)
+            
+            # Correction des balises <button> mal fermées (optionnel, pour nettoyer les précédents fichiers)
+            content = pattern_wrong_button.sub(replacement_button, content)
+            
+            # On n'écrit dans le fichier que s'il y a eu un changement
+            if content != original_content:
+                with open(filepath, 'w', encoding='utf-8') as file:
+                    file.write(content)
+                print(f"✔️ Mis à jour : {filename}")
+                files_updated += 1
+
+    print(f"\nTerminé ! {files_updated} fichier(s) mis à jour.")
+
+if __name__ == "__main__":
+    # Lance le remplacement dans le dossier courant
+    update_login_tags()

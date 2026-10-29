@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MariolaStevanovic - JavaScript - Exercice2</title>
+  <link rel="stylesheet" href="../../assets/css/exercices.css">
+</head>
+
+<body>
+ <div class="exercice-wrapper">
+  <h1>Exercice 2: calcul de l'hypoténuse</h1>
+  <div class="boite">
+    <p>
+      On a un triangle ABC rectangle en A  
+      Le programme doit calculer la longueur BC
+    </p>
+    <p>
+
+      <label>AB:</label>
+      <input type="number" id="ab" step="0.01">
+    </p>
+    <p>
+      <label>AC:</label>
+
+      <input type="number" id="ac" step="0.01">
+    </p>
+
+    <button onclick="calculer()">Calculer BC</button>
+
+
+
+    <div class="rst" id="res">
+      BC =
+    </div>
+  </div>
+  <a href="exercices.html" class="home-btn">Retour a la page des exercices</a>
+ </div>
+
+
+
+
+  <script>
+    function calculer(){
+
+      let AB= Number(document.getElementById("ab").value);
+      let AC= Number(document.getElementById("ac").value);
+
+      if (AB<= 0 || AC<= 0){
+        document.getElementById("res").textContent=
+        "Erreur: les longueurs doivent être positives";
+      }
+      else{
+
+        let BC= Math.sqrt(AB*AB+AC*AC);
+
+        document.getElementById("res").textContent=
+        "BC ≈ "+BC.toFixed(2);
+
+      }
+    }
+  </script>
+
+</body>
+</html>

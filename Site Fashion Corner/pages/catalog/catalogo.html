@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Options</title>
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="../../assets/css/headerfooter.css">
+</head>
+<body>
+     <div class="Header">  
+        <a href="../../index.html" class="logo"> 
+            <img src="https://i.imgur.com/f1D317g.png" alt="Logo"> 
+        </a> <a href="../premium/premium.html" class="premium"> 
+            <p class="prem-txt">premium:</p> 
+            <img src="https://i.imgur.com/Y5zyOCO.png" alt="Premium"> 
+        </a> 
+        <a href="#" class="basket"> 
+            <img src="https://i.imgur.com/Oely3nV.png" alt="Panier"> 
+        </a> 
+        <button onclick="loginButtonClicked()" class="login" id="login-text">Se connecter</button>
+        <script src="../../assets/js/default-script.js"></script>
+        <script type="text/javascript">onEveryPageLoad()</script> 
+    </div> 
+<div class="main-content">
+
+    <h1>Nos Options</h1>
+
+    <div class="catalogues">
+        <a href="femmes.html" class="catalogue-item">
+            <img src="https://i.imgur.com/TqEj9AP.jpeg" alt="Catalogue Femme">
+            <p>Femme</p>
+        </a>
+
+        <a href="hommes.html" class="catalogue-item">
+            <img src="https://i.imgur.com/8sAdxKw.jpeg" alt="Catalogue Homme">
+            <p>Homme</p>
+        </a>
+
+        <a href="enfants.html" class="catalogue-item">
+            <img src="https://i.imgur.com/Be9gZ3A.jpeg" alt="Catalogue Enfants">
+            <p>Enfants</p>
+        </a>
+
+        <a href="chaussures.html" class="catalogue-item">
+            <img src="https://i.imgur.com/9YzHx1K.jpeg" alt="Catalogue Chaussures">
+            <p>Chaussures</p>
+        </a>
+    </div>
+    <p id="temps">Temps passé sur la page: 0 min 0 s</p>
+</div>
+<div class="Footer">
+     <div class="footer-content"> 
+        <a href="../about/aboutus.html">
+            About Us
+
+        </a> 
+        <a href="#">
+            Contact
+
+        </a> 
+        <a href="#">
+            Mentions légales
+
+        </a> 
+    </div> 
+    <p class="copyright"> 
+        © 2026 Fashion Corner. Tous droits réservés. 
+    </p> 
+<script>
+let secondesPassees=0;
+
+function TempsPasse() {
+  const zoneAffichage=document.getElementById("temps");
+
+  setInterval(() => {
+    secondesPassees++;
+
+    const minutes=Math.floor(secondesPassees/60);
+    const secondes=secondesPassees % 60;
+
+    zoneAffichage.textContent=
+      `Temps passé sur la page: ${minutes} min ${secondes} s`;
+  }, 1000);
+}
+
+TempsPasse();
+</script>
+</div>
+</body>
+</html>
