@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MariolaStevanovic - JavaScript - Exercice8</title>
+  <link rel="stylesheet" href="exercices.css">
+</head>
+
+<body>
+ <div class="exercice-wrapper">
+  <h1>Exercice 8: choix et message personnalisé</h1>
+
+  <div class="boite" id="boite">
+
+    <p>Choisissez une option :</p>
+
+    <input type="radio" name="choix" value="garcon" onclick="changer()"> Garçon
+    <input type="radio" name="choix" value="fille" onclick="changer()"> Fille
+    <input type="radio" name="choix" value="autre" onclick="changer()"> Autre
+
+    <div class="rst" id="res">
+      Message:
+    </div>
+
+  </div>
+  <a href="exercices.html" class="home-btn">Retour a la page des exercices</a>
+ </div>
+  <script>
+    function changer(){
+      let choix= document.querySelector('input[name="choix"]:checked').value;
+      let box=document.getElementById("boite");
+      let message ="";
+      if (choix=== "garcon"){
+        box.style.backgroundColor = "#dbe9ff";
+        message="Bonjour Monsieur";
+      }
+      else if (choix === "fille"){
+        box.style.backgroundColor = "#f8d7ff";
+        message="Bonjour Madame";
+      }
+      else{
+        box.style.backgroundColor ="#d4f8e8";
+        message ="Bonjour";
+      }
+      document.getElementById("res").textContent=
+      "Message : "+message;
+    }
+  </script>
+ 
+</body>
+</html>

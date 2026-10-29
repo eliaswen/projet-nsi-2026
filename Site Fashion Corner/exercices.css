@@ -1,0 +1,77 @@
+body{
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #f6f7fb;
+  color: #222;
+}
+h1{
+  font-size: 22px;
+}
+
+.boite{
+  background: white;
+  border: 1px solid #cfd6e4;
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 12px;
+  max-width: 700px;
+}
+
+label{ 
+  display: inline-block;
+   width: 90px;
+}
+
+input{
+  padding: 6px;
+  border: 1px solid #cfd6e4;
+  border-radius: 6px;
+  margin: 4px 0;
+}
+
+button{
+  padding: 7px 12px;
+  border: 1px solid #9fb3d1;
+  background: #e7f0ff;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+button:hover{
+  background: #dbe9ff;
+}
+
+.rst{
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px dashed #9fb3d1;
+  border-radius: 8px;
+  background: #fbfdff;
+}
+.exercice-wrapper {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-btn {
+  background: #fff;
+  border: 1px solid rgba(90, 57, 57, 0.555);
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.555);
+  font-size: 17px;
+  font-family: Georgia, "Times New Roman", serif;
+  padding: 6px 12px;
+  transition: all 0.2s ease;
+  margin: 10px auto; 
+  margin-top : 75px;
+  border-radius: 5px;
+}
+.home-btn:hover{
+  padding: 10px 16px;
+  background: antiquewhite;
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.39);
+  transform: translateY(-5px);
+}

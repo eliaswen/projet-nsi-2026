@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Connexion</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="elias-styles.css">
+        <link rel="stylesheet" href="login-styles.css">
+        <link rel="stylesheet" href="headerfooter.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+    </head>
+    <body class="body">
+        <!--En haut (doit rester pareil sur toutes les pages)-->
+
+  <div class="Header">
+    <a href="acceuil.html" class="logo">
+      <img src="https://i.imgur.com/f1D317g.png" alt="Logo">
+    </a>
+   
+    <a href="premium.html" class="premium">
+      <p class="prem-txt">premium:</p>
+      <img src="https://i.imgur.com/Y5zyOCO.png" alt="Premium">
+    </a>
+
+    <a href="#" class="basket">
+      <img src="https://i.imgur.com/Oely3nV.png" alt="Panier">
+    </a>
+
+    <button onclick="loginButtonClicked()" class="login" id="login-text">Se connecter</button>
+        <script src="default-script.js"></script>
+        <script type="text/javascript">onEveryPageLoad()</script>
+  </div>
+        <!--Contenu de la page ici-->
+    <div class="main-content">
+        <span id="text-se-connecter">Connexion</span>
+        <div id=inputs-div>
+        <span class="text-inputs">Adresse mail:</span><br>
+        <input class="inputs" type="email" id="email-input" placeholder="Entrez votre adresse mail ici"></input><br>
+        <div id="wrong-email"></div>
+        <span class="text-inputs">Mot de passe:</span><br>
+        <input class="inputs" type="password" id="password-input" placeholder="Entrez votre mot de passe ici"></input><br>
+        <div id="wrong-password"></div>
+        <button id="register-button" onClick="connectButtonClick()">Se connecter</button><br>
+        <a id=switch-to-connect href="inscription.html">Vous n'avez pas de compte?</a><br><br><br>
+
+   </div>
+    </div>
+
+
+
+        <script src="connexion-script.js" async defer></script>
+        <script src="default-script.js"></script>
+        <script type="text/javascript">onEveryPageLoad();</script>
+
+  <div class="Footer">
+    <div class="footer-content">
+      <a href="aboutus.html">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Mentions légales</a>
+    </div>
+    <p class="copyright">© 2026 Fashion Corner. Tous droits réservés.</p>
+  </div>
+    </body>
+</html>

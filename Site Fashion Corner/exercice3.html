@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MariolaStevanovic - JavaScript - Exercice3</title>
+  <link rel="stylesheet" href="exercices.css">
+</head>
+
+<body>
+ <div class="exercice-wrapper">
+  <h1>Exercice 3: Triangle rectangle?</h1>
+
+ <div class="boite">
+    <p>
+      Entre les longueurs AB, AC et BC<br>
+      Le programme dit si le triangle ABC est rectangle et en quel point
+    </p>
+
+    <p>
+      <label>AB:</label>
+      <input type="number" id="ab" step="0.01" value="3">
+  </p>
+    <p>
+      <label>AC:</label>
+      <input type="number" id="ac" step="0.01" value="4">
+    </p>
+
+
+
+    <p>
+      <label>BC:</label>
+      <input type="number" id="bc" step="0.01" value="5">
+    </p>
+    <button onclick="verifier()">Vérifier</button>
+
+    <div class="rst" id="res">Résultat:</div>
+  </div>
+  <a href="exercices.html" class="home-btn">Retour a la page des exercices</a>
+ </div>
+
+
+  <script>
+  function verifier(){
+    let AB=Number(document.getElementById("ab").value);
+    let AC=  Number(document.getElementById("ac").value);
+    let BC=Number(document.getElementById("bc").value);
+    if (AB<= 0||AC<= 0||BC<=0){
+      document.getElementById("res").textContent=
+      "Erreur : longueurs positives uniquement.";
+      return;
+    }
+
+
+
+
+
+
+    let AB2= AB* AB;
+    let AC2 = AC *AC;
+    let BC2=BC *BC;
+    let message="";
+
+    
+    if (AB2+  AC2  ==BC2){
+
+
+
+      message="Triangle rectangle en A";
+    }
+    else if (AB2 + BC2 ==AC2){
+      message = "Triangle rectangle en B";
+    }
+    else if (AC2+ BC2 ==AB2){
+      message= "Triangle rectangle en C";
+    }
+    else{
+      message="Triangle non rectangle";
+    }
+    document.getElementById("res").textContent =message;
+  }
+</script>
+
+</body>
+</html>

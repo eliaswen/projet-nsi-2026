@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>NSI Fashion Corner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="body">
+
+  <div class="Header">
+    <a href="acceuil.html" class="logo">
+      <img src="https://i.imgur.com/f1D317g.png" alt="Logo">
+    </a>
+
+    <a href="premium.html" class="premium">
+      <p class="prem-txt">premium:</p>
+      <img src="https://i.imgur.com/Y5zyOCO.png" alt="Premium">
+    </a>
+    <a href="#" class="basket">
+      <img src="https://i.imgur.com/Oely3nV.png" alt="Panier">
+    </a>
+    <button onclick="loginButtonClicked()" class="login" id="login-text">Se connecter</button>
+        <script src="default-script.js"></script>
+        <script type="text/javascript">onEveryPageLoad()</script>
+  </div>
+
+  <div class="main-content">  
+    <div class="ad">
+      <img src="https://i.imgur.com/0S1OK5S.png" alt="Left ad">
+    </div>
+
+    <div class="checkout-content">
+        <h3 class="checkout-header">Fashion Corner</h3>
+        <h2 class="checkout-title">Finaliser votre commande</h2>
+
+        <p class="checkout-description">
+        Vous êtes à un pas de rejoindre notre programme Premium exclusif.
+        Profitez d'avantages uniques, d'offres privées et d'un accès prioritaire
+        à nos nouvelles collections.
+        </p>
+        <div class="order-summary">
+            <h3>Résumé de la commande</h3>
+
+            <p>Offre : <span id="offer-text"></span></p>
+            <p>Accès : 1 mois</p>
+            <p>Prix : <span id="price-text"></span></p>
+        </div>
+
+        <div class="payment-section">
+            <h3>Informations de paiement</h3>
+            <input class="payment-input" type="text" id="card-name" placeholder="Nom sur la carte" oninput="onlyletters(this)">
+            <input class="payment-input" type="text" id="card-number" placeholder="Numéro de carte" oninput="onlynumbers(this)">
+            <input class="payment-input" type="text" id="card-date" placeholder="Date d'expiration" oninput="onlynumbers(this)">
+            <input class="payment-input" type="text" id="card-code" placeholder="Code de sécurité" oninput="onlynumbers(this)">
+            <a href="finpremium.html" class="pay-btn" onclick="return checkPay()">Payer</a>
+          
+        </div>
+    </div>
+    
+    <div class="ad">
+      <img src="https://i.imgur.com/0S1OK5S.png" alt="Right ad">
+    </div>
+  </div>
+  <div class="Footer">
+    <div class="footer-content">
+      <a href="aboutus.html">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Mentions légales</a>
+    </div>
+    <p class="copyright">
+      © 2026 Fashion Corner. Tous droits réservés.
+    </p>
+  </div>
+<script src="script.js"></script>
+</body>
+</html>

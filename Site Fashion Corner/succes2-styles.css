@@ -1,0 +1,18 @@
+.elias-center {
+    text-align: center;
+    margin-top: 64px;
+    margin-bottom: 128px;
+}
+
+.elias-t128 {
+    font-size: clamp(64px, 8vw, 128px);
+}
+
+.elias-green {
+    color: rgb(50, 122, 50);
+}
+
+.elias-t64 {
+    font-size: clamp(32px, 8vw, 64px);
+}
+
