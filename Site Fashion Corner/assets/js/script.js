@@ -65,10 +65,3 @@ function checkPay() {
   }
   return true;
 }
-function blink() { 
-const elem = document.getElementById("blink"); 
-setInterval(() => { 
-  elem.style.visibility = 
-    (elem.style.visibility === "hidden") ? "visible" : "hidden"; 
-   }, 500); 
-}
