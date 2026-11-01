@@ -47,7 +47,9 @@ const badges = [
   document.getElementById("badge-mariola")
 ];
 const randomIndex=Math.floor(Math.random()*badges.length);
-badges[randomIndex].textContent=" Membre du mois";
+if (badges[randomIndex]) {
+  badges[randomIndex].textContent=" Membre du mois";
+}
 
 
 
