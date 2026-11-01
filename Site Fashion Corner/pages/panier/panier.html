@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>NSI Fashion Corner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/panier-styles.css">
+</head>
+<body class="body">
+  <div class="Header">
+    <a href="../../index.html" class="logo">
+      <img src="https://i.imgur.com/f1D317g.png" alt="Logo">
+    </a>
+
+    <a href="../premium/premium.html" class="premium">
+      <p class="prem-txt">premium:</p>
+      <img src="https://i.imgur.com/Y5zyOCO.png" alt="Premium">
+    </a>
+    <a href="panier.html" class="basket">
+      <img src="https://i.imgur.com/Oely3nV.png" alt="Panier">
+    </a>
+    <button onclick="loginButtonClicked()" class="login" id="login-text">Se connecter</button>
+        <script src="../../assets/js/default-script.js"></script>
+        <script type="text/javascript">onEveryPageLoad()</script>
+  </div>
+
+  <div class="main-content">
+    <div class="ad">
+      <img src="https://i.imgur.com/0S1OK5S.png" alt="Left ad">
+    </div>
+
+    <div class="checkout-content">
+        <h3 class="checkout-header">Fashion Corner</h3>
+        <h2 class="checkout-title">Votre panier</h2>
+
+        <p class="panier-vide" id="panier-vide" hidden>Votre panier est vide.</p>
+
+        <div class="panier-liste" id="panier-liste"></div>
+
+        <template id="panier-modele">
+            <div class="panier-item">
+                <img class="panier-img">
+                <div class="panier-infos">
+                    <h3 class="panier-nom"></h3>
+                    <p>Taille : <span class="panier-taille"></span></p>
+                    <p>Prix : <span class="panier-prix"></span>€</p>
+                </div>
+                <input class="panier-quantite" type="number" name="quantite" min="1" aria-label="Quantité">
+                <button class="panier-retirer">Retirer</button>
+            </div>
+        </template>
+
+        <div id="panier-resume">
+            <div class="order-summary">
+                <h3>Résumé de la commande</h3>
+
+                <p>Articles : <span id="panier-nombre">0</span></p>
+                <p>Total : <span id="panier-total">0</span>€</p>
+            </div>
+
+            <a href="#" class="pay-btn panier-commander" id="panier-commander">Commander</a>
+        </div>
+    </div>
+
+    <div class="ad">
+      <img src="https://i.imgur.com/0S1OK5S.png" alt="Right ad">
+    </div>
+  </div>
+  <div class="Footer">
+    <div class="footer-content">
+      <a href="../about/aboutus.html">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Mentions légales</a>
+    </div>
+    <p class="copyright">
+      © 2026 Fashion Corner. Tous droits réservés.
+    </p>
+  </div>
+<script src="../../assets/js/panier-script.js"></script>
+<script type="text/javascript">afficherPanier()</script>
+</body>
+</html>

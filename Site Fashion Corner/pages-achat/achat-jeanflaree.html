@@ -16,7 +16,7 @@
             <p class="prem-txt">premium:</p> 
             <img src="https://i.imgur.com/Y5zyOCO.png" alt="Premium"> 
         </a> 
-        <a href="#" class="basket"> 
+        <a href="../pages/panier/panier.html" class="basket"> 
             <img src="https://i.imgur.com/Oely3nV.png" alt="Panier"> 
         </a> 
         <button onclick="loginButtonClicked()" class="login" id="login-text">Se connecter</button>
@@ -25,7 +25,7 @@
     </div> 
 <div class="main-content">
 
-    <div class="product-container">
+    <div class="product-container" data-id-produit="jeanflaree" data-nom="jean flare enfant" data-prix="150" data-image="https://i.imgur.com/lvBThff.jpeg">
         <h1>jean flare enfant, 150€</h1>
 
         <img src="https://i.imgur.com/lvBThff.jpeg" alt="Jean flare enfant" class="product-img">
@@ -33,14 +33,14 @@
         <h3>Choisissez une taille :</h3>
 
         <div class="sizes">
-            <button class="size-btn">XS</button>
-            <button class="size-btn">S</button>
-            <button class="size-btn">M</button>
-            <button class="size-btn">L</button>
-            <button class="size-btn">XL</button>
+            <button class="size-btn" onclick="choisirTaille(this)">XS</button>
+            <button class="size-btn" onclick="choisirTaille(this)">S</button>
+            <button class="size-btn" onclick="choisirTaille(this)">M</button>
+            <button class="size-btn" onclick="choisirTaille(this)">L</button>
+            <button class="size-btn" onclick="choisirTaille(this)">XL</button>
         </div>
 
-        <button class="action-btn add-cart" onclick="panierFake()">Ajouter au panier</button>
+        <button class="action-btn add-cart" onclick="ajouterAuPanier()">Ajouter au panier</button>
         <button class="action-btn buy-now" id="blink">Acheter maintenant</button>
     </div>
 </div>
@@ -71,13 +71,11 @@ setInterval(() => {
     (elem.style.visibility === "hidden") ? "visible" : "hidden"; 
    }, 500); 
 }
-function panierFake() {
-    alert("Yipee ! Le panier ne marche pas !");
-}
 </script>
 
 <script>
 blink()
 </script>
+<script src="../assets/js/panier-script.js"></script>
 </body>
 </html>

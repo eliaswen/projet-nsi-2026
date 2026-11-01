@@ -112,6 +112,11 @@
             color: white;
         }
 
+        .size-selected {
+            background: #333;
+            color: white;
+        }
+
         .action-btn {
             width: 80%;
             padding: 12px;
