@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>NSI Fashion Corner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/panier-styles.css">
+</head>
+<body class="body">
+
+  <div class="Header">
+    <a href="../../index.html" class="logo">
+      <img src="https://i.imgur.com/f1D317g.png" alt="Logo">
+    </a>
+
+    <a href="../premium/premium.html" class="premium">
+      <p class="prem-txt">premium:</p>
+      <img src="https://i.imgur.com/Y5zyOCO.png" alt="Premium">
+    </a>
+    <a href="panier.html" class="basket">
+      <img src="https://i.imgur.com/Oely3nV.png" alt="Panier">
+    </a>
+    <button onclick="loginButtonClicked()" class="login" id="login-text">Se connecter</button>
+        <script src="../../assets/js/default-script.js"></script>
+        <script type="text/javascript">onEveryPageLoad()</script>
+  </div>
+
+  <div class="main-content">
+    <div class="ad">
+      <img src="https://i.imgur.com/0S1OK5S.png" alt="Left ad">
+    </div>
+
+    <div class="checkout-content">
+        <h3 class="checkout-header">Fashion Corner</h3>
+        <h2 class="checkout-title">Finaliser votre commande</h2>
+
+        <div class="order-summary">
+            <h3>Résumé de la commande</h3>
+
+            <p>Articles : <span id="panier-nombre">0</span></p>
+            <p>Total : <span id="panier-total">0</span>€</p>
+        </div>
+
+        <div class="payment-section">
+            <h3>Informations de livraison</h3>
+            <input class="payment-input" type="text" id="commande-nom" placeholder="Nom complet">
+            <input class="payment-input" type="email" id="commande-email" placeholder="Adresse e-mail">
+            <input class="payment-input" type="text" id="commande-adresse" placeholder="Adresse">
+            <input class="payment-input" type="text" id="commande-code-postal" placeholder="Code postal">
+            <input class="payment-input" type="text" id="commande-ville" placeholder="Ville">
+        </div>
+
+        <a href="confirmation.html" class="pay-btn panier-commander" onclick="return validerCommande()">Confirmer la commande</a>
+    </div>
+
+    <div class="ad">
+      <img src="https://i.imgur.com/0S1OK5S.png" alt="Right ad">
+    </div>
+  </div>
+  <div class="Footer">
+    <div class="footer-content">
+      <a href="../about/aboutus.html">About Us</a>
+      <a href="#">Contact</a>
+      <a href="#">Mentions légales</a>
+    </div>
+    <p class="copyright">
+      © 2026 Fashion Corner. Tous droits réservés.
+    </p>
+  </div>
+<script src="../../assets/js/panier-script.js"></script>
+<script type="text/javascript">afficherCommande()</script>
+</body>
+</html>

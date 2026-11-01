@@ -8,6 +8,15 @@ function getPanier() {
 
 function savePanier(panier) {
     localStorage.setItem("panier", JSON.stringify(panier));
+    afficherNombrePanier();
+}
+
+function getTotal(panier) {
+    let total = 0;
+    for (let i = 0; i < panier.length; i++) {
+        total = total + panier[i].prix * panier[i].quantite;
+    }
+    return total;
 }
 
 function choisirTaille(bouton) {
@@ -18,11 +27,11 @@ function choisirTaille(bouton) {
     bouton.classList.add("size-selected");
 }
 
-function ajouterAuPanier() {
+function ajouterArticle() {
     let tailleChoisie = document.querySelector(".size-selected");
     if (tailleChoisie == null) {
         alert("Choisissez une taille.");
-        return;
+        return false;
     }
 
     let produit = document.querySelector(".product-container").dataset;
@@ -49,7 +58,19 @@ function ajouterAuPanier() {
     }
 
     savePanier(panier);
-    alert("Article ajouté au panier !");
+    return true;
+}
+
+function ajouterAuPanier() {
+    if (ajouterArticle()) {
+        alert("Article ajouté au panier !");
+    }
+}
+
+function acheterMaintenant() {
+    if (ajouterArticle()) {
+        window.location.href = new URL("pages/panier/panier.html", fashionCornerRoot).href;
+    }
 }
 
 function changerQuantite(index, valeur) {
@@ -74,8 +95,6 @@ function afficherPanier() {
     let panier = getPanier();
     let liste = document.getElementById("panier-liste");
     let modele = document.getElementById("panier-modele");
-    let nombre = 0;
-    let total = 0;
 
     liste.innerHTML = "";
 
@@ -98,12 +117,36 @@ function afficherPanier() {
         };
 
         liste.appendChild(ligne);
-        nombre = nombre + article.quantite;
-        total = total + article.prix * article.quantite;
     }
 
-    document.getElementById("panier-nombre").textContent = nombre;
-    document.getElementById("panier-total").textContent = total;
+    document.getElementById("panier-nombre").textContent = getNombreArticles();
+    document.getElementById("panier-total").textContent = getTotal(panier);
     document.getElementById("panier-vide").hidden = panier.length > 0;
     document.getElementById("panier-resume").hidden = panier.length == 0;
+}
+
+function afficherCommande() {
+    let panier = getPanier();
+    if (panier.length == 0) {
+        window.location.href = "panier.html";
+        return;
+    }
+    document.getElementById("panier-nombre").textContent = getNombreArticles();
+    document.getElementById("panier-total").textContent = getTotal(panier);
+}
+
+function validerCommande() {
+    let champs = document.querySelectorAll(".payment-input");
+    for (let i = 0; i < champs.length; i++) {
+        if (champs[i].value.trim() === "") {
+            alert("Veuillez remplir tous les champs.");
+            return false;
+        }
+    }
+    if (document.getElementById("commande-email").value.includes("@") == false) {
+        alert("Veuillez entrer une adresse e-mail valide.");
+        return false;
+    }
+    savePanier([]);
+    return true;
 }

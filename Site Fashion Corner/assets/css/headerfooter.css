@@ -97,3 +97,20 @@
   width: auto;
   object-fit: contain;
 }
+
+.basket {
+  position: relative;
+}
+
+.basket-nombre {
+  position: absolute;
+  top: 6px;
+  right: 40px;
+  min-width: 20px;
+  padding: 2px 4px;
+  border-radius: 12px;
+  background-color: rgb(173, 152, 126);
+  color: white;
+  font-size: 13px;
+  text-align: center;
+}
