@@ -1179,25 +1179,6 @@
   margin-bottom: 10px;
 }
 
-.exos-link {
-  margin-top: 50px;
-}
-
-.exos-link a {
-  text-decoration: none;
-  background-color: gold;
-  padding: 12px 25px;
-  border-radius: 25px;
-  color: black;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.exos-link a:hover {
-  background-color: black;
-  color: white;
-}
-
 .slider{
   width: 100%;
   max-width: 600px;
